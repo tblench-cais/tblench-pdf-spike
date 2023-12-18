@@ -23,12 +23,12 @@ Times are mean based on 10 executions to allow for JVM/library warm-up (it's not
 
 ### 250 rows
 
-| PDFreactor | Flying Saucer  |
-|--|--|
-| 3.581s | 0.426s |
+| PDFreactor | Flying Saucer  | Speedup |
+|--|--|--|
+| 3.581s | 0.426s | 8.406 |
 
 ### 1500 rows
 
-| PDFreactor | Flying Saucer  |
-|--|--|
-| 12.51s | 1.647s |
+| PDFreactor | Flying Saucer  | Speedup |
+|--|--|--|
+| 12.51s | 1.647s | 7.596 |
