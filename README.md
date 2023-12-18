@@ -4,8 +4,8 @@
 
 These are the input files:
 
-- [resources/clean-table-cleaned-up-250.html](clean-table-cleaned-up-250.html)
-- [resources/clean-table-cleaned-up-1500.html](clean-table-cleaned-up-1500.html)
+- [clean-table-cleaned-up-250.html](resources/clean-table-cleaned-up-250.html)
+- [clean-table-cleaned-up-1500.html](resources/clean-table-cleaned-up-1500.html)
 
 They are synthetic HTML with 250 and 1500 rows, respectively, and feature sub-rows and some basic styling, as well as a CSS pie chart.
 
