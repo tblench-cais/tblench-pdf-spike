@@ -38,3 +38,7 @@ Times are mean based on 10 executions to allow for JVM/library warm-up (it's not
 PDFreactor is much slower but we know from other testing that it can handle the full, unmodified CAIS CSS and natively render SVG.
 
 Flying Saucer is much faster but less capable: we would have to render any SVGs as images and simplify the CSS.
+
+## Asynchronous PDF Generation
+
+See [here](doc/async-use-cases.md) for a discussion of how to approach long-running PDF report requests.
