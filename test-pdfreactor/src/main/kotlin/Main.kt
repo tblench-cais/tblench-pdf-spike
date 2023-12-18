@@ -4,7 +4,7 @@ import java.io.File
 import java.time.Instant
 
 fun main(args: Array<String>) {
-    val avg = timedRepeat({ createPdf("../resources/clean-table-cleaned-up.html", "./out-pdf-reactor.pdf") }, 10)
+    val avg = timedRepeat({ createPdf("../resources/clean-table-cleaned-up-1500.html", "./out-pdf-reactor.pdf") }, 10)
     println("Took ${avg / 1000.0F}s (mean)")
 }
 
@@ -23,13 +23,14 @@ fun timedRepeat(fn: () -> Unit, times: Int): Long {
 fun createPdf(html: String, pdf: String) {
     val config = Configuration()
     config.licenseKey = """
-        xxxx
+        xxx
     """.trimIndent()
     config.baseUrl = "https://members.caisgroup.com/"
     config.setProcessingPreferences(Configuration.ProcessingPreferences.SAVE_MEMORY_IMAGES)
     config.setDocument(File(html).readBytes())
     config.setLogLevel(Configuration.LogLevel.DEBUG)
     config.setFontCachePath("/tmp/pdfreactor")
+    config.setFullCompression(true)
     val pdfReactor = run {
         System.setProperty("java.awt.headless", "true")
         PDFreactor()
