@@ -24,10 +24,10 @@ sequenceDiagram
     actor User
     User ->> RestController: createPdfReport(reportType, options)
     RestController ->> User: 200 OK
-    RestController ->> SchedulerDB: savePdfReportRequest(reportType, options)
-    SchedulerThread ->> SchedulerDB: poll
-    SchedulerThread ->> PDFService: createPdf(reportType, options)
-    PDFService ->> SchedulerThread: pdf
+    RestController ->> DbScheduler: savePdfReportRequest(reportType, options)
+    SchedulerThread ->> DbScheduler: poll
+    SchedulerThread ->> PdfService: createPdf(reportType, options)
+    PdfService ->> SchedulerThread: pdf
     SchedulerThread ->> EmailService: sendEmail(pdf)
 ```
 
@@ -46,11 +46,11 @@ Cons:
 sequenceDiagram
     actor User
     User ->> RestController: createPdfReport(reportType, options)
-    RestController ->> SchedulerDB: savePdfReportRequest(reportType, options)
+    RestController ->> DbScheduler: savePdfReportRequest(reportType, options)
     RestController ->> User: token
-    SchedulerThread ->> SchedulerDB: poll
-    SchedulerThread ->> PDFService: createPdf(reportType, options)
-    PDFService ->> SchedulerThread: pdf
+    SchedulerThread ->> DbScheduler: poll
+    SchedulerThread ->> PdfService: createPdf(reportType, options)
+    PdfService ->> SchedulerThread: pdf
     SchedulerThread ->> FileService: saveFile(pdf, token)
     User ->> RestController: poll(token)
     RestController ->> FileService: getFile(token)
