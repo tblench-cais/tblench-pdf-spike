@@ -32,3 +32,9 @@ Times are mean based on 10 executions to allow for JVM/library warm-up (it's not
 | PDFreactor | Flying Saucer  | Speedup |
 |--|--|--|
 | 12.51s | 1.647s | 7.596 |
+
+## Commentary
+
+PDFreactor is much slower but we know from other testing that it can handle the full, unmodified CAIS CSS and natively render SVG.
+
+Flying Saucer is much faster but less capable: we would have to render any SVGs as images and simplify the CSS.
