@@ -6,7 +6,9 @@ Large PDF reports may take a long time to generate, and synchronous endpoints ma
 - Users may abandon the API call by navigating away
 - The connection might get interrupted partway through downloading the rendered PDF.
 
-The [db-scheduler](https://github.com/kagkarlsson/db-scheduler) library is already being used elsewhere in CAIS and should be used to provide robust and durable task scheduling.
+The [db-scheduler](https://github.com/kagkarlsson/db-scheduler) library is already being used elsewhere in CAIS and should be used to provide robust and durable task scheduling. The use of a SchedulerThread is shown here to enforce resource limiting (via a thread pool or similar): since PDF generation can consume large amounts of CPU and memory, we will want to limit the number of concurrent invocations. 
+
+Also note that this differs from our current solution which builds the page in the browser and sends that HTML to the backend for PDF rendering. The relative costs of maintaining HTML templates for PDF rendering vs the potential latency of building the entire page in the browser are an open question.
 
 ## Email
 
