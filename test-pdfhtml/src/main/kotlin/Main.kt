@@ -5,7 +5,7 @@ import java.io.FileOutputStream
 import java.time.Instant
 
 fun main(args: Array<String>) {
-    val avg = timedRepeat({ createPdf("../resources/clean-table-cleaned-up-1500.html", "./out-html2pdf.pdf") }, 10)
+    val avg = timedRepeat({ createPdf("../resources/clean-table-cleaned-up-1500.html", "./out-pdfhtml.pdf") }, 10)
     println("Took ${avg / 1000.0F}s (mean)")
 }
 
