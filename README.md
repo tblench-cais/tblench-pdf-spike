@@ -103,6 +103,7 @@ These are sample output files, with the 1500 row variant:
 
 - [out-flying-saucer.pdf](test-flying-saucer/out-flying-saucer.pdf)
 - [out-pdf-reactor.pdf](test-pdfreactor/out-pdf-reactor.pdf)
+- [out-html2pdf-reactor.pdf](test-html2pdf/out-pdf-reactor.pdf)
 
 ## Benchmarks
 
@@ -110,21 +111,23 @@ Times are mean based on 10 executions to allow for JVM/library warm-up (it's not
 
 ### 250 rows
 
-| PDFreactor | Flying Saucer | Speedup |
-|------------|---------------|---------|
-| 3.581s     | 0.426s        | 8.406   |
+| PDFreactor | Flying Saucer | html2pdf | Speedup (PDFreactor vs Flying Saucer) |
+|------------|---------------|----------|---------|
+| 3.581s     | 0.426s        | 0.915s   | 8.406   |
 
 ### 1500 rows
 
-| PDFreactor | Flying Saucer | Speedup |
-|------------|---------------|---------|
-| 12.51s     | 1.647s        | 7.596   |
+| PDFreactor | Flying Saucer | html2pdf | Speedup (PDFreactor vs Flying Saucer) |
+|------------|---------------|----------|---------|
+| 12.51s     | 1.647s        | 4.43s    | 7.596   |
 
 ## Commentary
 
 PDFreactor is much slower but we know from other testing that it can handle the full, unmodified CAIS CSS and natively render SVG.
 
 Flying Saucer is much faster but less capable: we would have to render any SVGs as images and simplify the CSS.
+
+html2pdf ignores our CSS and SVG without emitting any errors or warnings.
 
 Our existing PDFreactor usage within our cloud estate has been observed to be slow and memory intensive. Observing PDFreactor logs for a large document, the gap between `Layout phase 1 of 3 reached` and `Layout phase 3 of 3 reached` messages in our cloud environment is approx 1 minute, whereas this process takes approx 5 seconds locally. The message `Could not use font cache on file system: Access Denied: /.PDFreactor` was observed in the cloud environment. [Setting the font cache option](https://github.com/cais-group/structured-products/pull/307/files) has proved effective at lowering this layout time dramatically.
 
