@@ -103,7 +103,7 @@ These are sample output files, with the 1500 row variant:
 
 - [out-flying-saucer.pdf](test-flying-saucer/out-flying-saucer.pdf)
 - [out-pdf-reactor.pdf](test-pdfreactor/out-pdf-reactor.pdf)
-- [out-html2pdf-reactor.pdf](test-html2pdf/out-pdf-reactor.pdf)
+- [out-html2pdf-reactor.pdf](test-html2pdf/out-html2pdf.pdf)
 
 ## Benchmarks
 
