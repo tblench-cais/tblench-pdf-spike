@@ -103,7 +103,7 @@ These are sample output files, with the 1500 row variant:
 
 - [out-flying-saucer.pdf](test-flying-saucer/out-flying-saucer.pdf)
 - [out-pdf-reactor.pdf](test-pdfreactor/out-pdf-reactor.pdf)
-- [out-html2pdf-reactor.pdf](test-html2pdf/out-html2pdf.pdf)
+- [out-pdfhtml.pdf](test-pdfhtml/out-pdfhtml.pdf)
 
 ## Benchmarks
 
@@ -111,13 +111,13 @@ Times are mean based on 10 executions to allow for JVM/library warm-up (it's not
 
 ### 250 rows
 
-| PDFreactor | Flying Saucer | html2pdf | Speedup (PDFreactor vs Flying Saucer) |
+| PDFreactor | Flying Saucer | pdfHtml | Speedup (PDFreactor vs Flying Saucer) |
 |------------|---------------|----------|---------|
 | 3.581s     | 0.426s        | 0.915s   | 8.406   |
 
 ### 1500 rows
 
-| PDFreactor | Flying Saucer | html2pdf | Speedup (PDFreactor vs Flying Saucer) |
+| PDFreactor | Flying Saucer | pdfHtml | Speedup (PDFreactor vs Flying Saucer) |
 |------------|---------------|----------|---------|
 | 12.51s     | 1.647s        | 4.43s    | 7.596   |
 
