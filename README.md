@@ -53,12 +53,14 @@ Supports SVG.
 
 iText, OpenPDF and pdf-box are all deemed unsuitable, as their input formats are extremely low-level. Apache FOP is the only low-level library deemed suitable as its input format is similar to HTML and it has good SVG support.
 
+I'm excluding pdfHtml here since it failed to render our CSS and SVG and gave no errors or warnings. It's a commercial licence which required me to obtain a trial licence key.
+
 Of the remaining libraries, we can sum up their suitability in a table, with the rationale given afterwards.
 
 |             | PDFreactor | Flying Saucer | Apache FOP |
 |-------------|------------|---------------|------------|
 | Familiarity  | ✅          | -             | -          |
-| SVG Support | ✅          | ❌             | ✅          |          
+| SVG Support | ✅          | ❌             | ✅          |
 | CSS Support | ✅          | -             | ❌          |
 | Speed       | ❌          | ✅             | ?          |
 
