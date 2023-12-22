@@ -59,3 +59,8 @@ sequenceDiagram
     FileService ->> RestController: pdf
     RestController ->> User: pdf
 ```
+
+The [https://github.com/cais-group/file-storage](file storage) API may be appropriate for this, provided it can:
+
+- List all files for a given CAIS user
+- Ensure appropriate security at a CAIS user level (eg, ordinary CAIS users cannot see each other's downloads; more complex IAM hierarchy requirements?)

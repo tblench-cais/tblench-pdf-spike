@@ -142,3 +142,12 @@ Therefore, we may be able to ameliorate PDFreactor issues with a combination of:
 ## Asynchronous PDF Generation
 
 See [here](doc/async-use-cases.md) for a discussion of how to approach long-running PDF report requests.
+
+# Conclusions
+
+We should continue to use PDFreactor since it meets our requirements in terms of PDF output quality. We have performance concerns but they can be ameliorated.
+
+Flying Saucer should still be considered as a fallback option, particularly if we have requirements for large documents and/or large tables within documents.
+
+We should use an asynchronous download solution for improved user experience with large documents.
+
